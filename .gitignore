@@ -1,0 +1,6 @@
+build/*
+.vscode
+*.bin
+*.log
+docs/html
+docs/latex
