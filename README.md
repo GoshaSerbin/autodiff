@@ -1,5 +1,4 @@
-sudo apt install doxygen clang-format clang-tidy
-sudo apt install graphviz
+sudo apt install doxygen graphviz clang-format clang-tidy
 
 doxygen -g
 doxygen Doxyfile
