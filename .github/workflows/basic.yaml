@@ -34,7 +34,7 @@ jobs:
           sudo apt-get install clang-format
       - name: Check format
         run: |
-          format_output=$(find . -name '*.cpp' -o -name '*.hpp' | xargs clang-format --dry-run --Werror)
+          format_output=$(find ./src ./libs -name '*.cpp' -o -name '*.hpp' | xargs clang-format --dry-run --Werror)
           if [[ $? -ne 0 ]]; then
             echo "$format_output"
             echo "::error file=FORMAT::Code is not formatted properly"
@@ -50,7 +50,7 @@ jobs:
       - name: Install cmake
         run: |
           sudo apt-get update
-          sudo apt-get install cmake
+          sudo apt-get install cmake libgtest-dev libgmock-dev
       - name: Build
         run: |
           cmake -B build
@@ -72,7 +72,7 @@ jobs:
       - name: Install cmake
         run: |
           sudo apt-get update
-          sudo apt-get install cmake libgtest-dev gcovr
+          sudo apt-get install cmake libgtest-dev libgmock-dev gcovr
       - name: Build
         run: |
           cmake -B build

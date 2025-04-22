@@ -34,9 +34,8 @@ namespace ai {
 
     auto Logger::BuildPrefix(Level level, std::source_location location) -> std::string {
         std::ostringstream oss;
-        oss << "[" << LevelToString(level) << "]\t"
-            << "[" << GetCurrentTime() << "]\t"
-            << "[" << location.file_name() << ", " << location.function_name() << ", " << location.line() << "]\t";
+        oss << "[" << LevelToString(level) << "]\t" << "[" << GetCurrentTime() << "]\t" << "[" << location.file_name() << ", "
+            << location.function_name() << ", " << location.line() << "]\t";
         return oss.str();
     }
 

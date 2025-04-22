@@ -66,8 +66,10 @@ class VectorBackend {
             outputs[0]->data[i] = std::pow(input->data[i], pow);
         }
     }
-    static auto VectorPowBackward(const std::vector<VecNodePtr<T>>& inputs, VecNode<T>* output, [[maybe_unused]] size_t outputIdx, T pow)
-        -> void {
+    static auto VectorPowBackward(const std::vector<VecNodePtr<T>>& inputs,
+                                  VecNode<T>* output,
+                                  [[maybe_unused]] size_t outputIdx,
+                                  T pow) -> void {
         const auto& input = inputs[0];
         if (input->requiresGrad) {
             for (size_t i = 0; i < input->data.size(); ++i) {
