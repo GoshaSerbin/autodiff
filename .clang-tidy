@@ -1,2 +1,15 @@
-Checks: 'bugprone-*, cert-*, clang-analyzer-*, concurrency-*, cppcoreguidelines-*, google-*, hicpp-*, linuxkernel-*, misc-*, modernize-*, performance-*, portability-*, readability-* '
-WarningsAsErrors: 'bugprone-*, cert-*, clang-analyzer-*, concurrency-*, cppcoreguidelines-*, google-*, hicpp-*, linuxkernel-*, misc-*, modernize-*, portability-*, readability-* '
+Checks: >
+  bugprone-*, cert-*, clang-analyzer-*, concurrency-*,
+  cppcoreguidelines-*, google-*, hicpp-*, linuxkernel-*,
+  misc-*, modernize-*, performance-*, portability-*,
+  readability-*,
+  -misc-include-cleaner,
+  -readability-identifier-length
+
+WarningsAsErrors: >
+  bugprone-*, cert-*, clang-analyzer-*, concurrency-*,
+  cppcoreguidelines-*, google-*, hicpp-*, linuxkernel-*,
+  misc-*, modernize-*, portability-*,
+  readability-*,
+  -misc-include-cleaner,
+  -readability-identifier-length

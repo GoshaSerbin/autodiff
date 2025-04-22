@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5.0)
-project(AUTODIFF 
+project(auto_diff
     VERSION 1.0 
     LANGUAGES CXX
 )
@@ -15,7 +15,7 @@ option(ENABLE_TESTS "Enable tests" ON)
 option(ENABLE_COVERAGE "Enable coverage" ON)
 option(ENABLE_SANITIZERS "Enable sanitizers" ON)
 option(ENABLE_CUDA "Enable CUDA support" OFF)
-option(ENABLE_OPENMP "Enable OpenMP support" ON)
+option(ENABLE_OPENMP "Enable OpenMP support" OFF)
 option(USE_ANDROID_LOGGING "Enable Android logging" OFF)
 
 # ==========================================================
@@ -27,7 +27,7 @@ add_compile_options(-Wall -Wextra -Werror -Wpedantic)
 # Source code
 # ==========================================================
 set(SOURCES
-main.cpp
+    src/main.cpp
 )
 set(INCLUDES
 include
@@ -48,6 +48,11 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE PROJECT_NAME="${PROJECT_NAME}
 add_subdirectory(libs/Logger)
 target_link_libraries(${PROJECT_NAME} PRIVATE Logger)
 
+# ==========================================================
+# AutoDiff
+# ==========================================================
+add_subdirectory(libs/AutoDiff)
+target_link_libraries(${PROJECT_NAME} PRIVATE AutoDiff)
 
 
 if (ENABLE_OPENMP)
@@ -104,10 +109,11 @@ if(ENABLE_SANITIZERS)
     add_link_options(-fsanitize=address -fsanitize=leak -fsanitize=undefined)
 endif()
 
-# if(ENABLE_TESTS)
-#     enable_testing()
-#     find_package(GTest REQUIRED)
-#     include_directories(${GTEST_INCLUDE_DIRS})
-#     add_subdirectory(tests)
-# endif()
+if(ENABLE_TESTS)
+    enable_testing()
+    find_package(GTest REQUIRED)
+    include_directories(${GTEST_INCLUDE_DIRS})
+    add_subdirectory(libs/AutoDiff/tests)
+    add_subdirectory(libs/Logger/tests)
+endif()
 

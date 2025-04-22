@@ -9,40 +9,40 @@
 
 namespace ai {
 
-    /*!
-        @brief Static class for logging.
+    /**
+    @brief Static class for logging.
 
-        Based on the singleton pattern, thread safety.
-        The default stream is std::cout.
-        It uses std::vformat for formating.
-        For custom classes logging you need to implement specialization of std::formatter for your class.
+    Based on the singleton pattern, thread safety.
+    The default stream is std::cout.
+    It uses std::vformat for formating.
+    For custom classes logging you need to implement specialization of std::formatter for your class.
 
-        Setting output stream:
-        \code
-            auto file = std::make_unique<std::ofstream>("log.log");
-            Logger::GetInstance().SetOutputStream(file.get());
+    Setting output stream:
+    \code
+        auto file = std::make_unique<std::ofstream>("log.log");
+        Logger::GetInstance().SetOutputStream(file.get());
+    \endcode
+    Custom class logging:
+    \code
+        class MyClass {
+            public:
+            int x = 42;
+            int y = 42;
+        };
+
+        template <>
+        struct std::formatter<MyClass> : std::formatter<std::string> {
+            auto format(MyClass p, format_context& ctx) const { return formatter<string>::format(std::format("[{}, {}]", p.x, p.y),
+    ctx); }
+        };
+
+        ...
+
+        // logging
+        LOG_INFO("Let me log pi={:10f}, str {}, e={:{}.{}f} and my class {} here!", pi, "hi", e, 3, 2, MyClass{});
+        // [INFO]	[18:06:52.588]	[file.cpp, int main(), 23]	Let me log pi=  3.141593, str hi, e=2.72 and my class [42, 42] here!
+
         \endcode
-        Custom class logging:
-        \code
-            class MyClass {
-             public:
-                int x = 42;
-                int y = 42;
-            };
-
-            template <>
-            struct std::formatter<MyClass> : std::formatter<std::string> {
-                auto format(MyClass p, format_context& ctx) const { return formatter<string>::format(std::format("[{}, {}]", p.x, p.y),
-       ctx); }
-            };
-
-            ...
-
-            // logging
-            LOG_INFO("Let me log pi={:10f}, str {}, e={:{}.{}f} and my class {} here!", pi, "hi", e, 3, 2, MyClass{});
-            // [INFO]	[18:06:52.588]	[file.cpp, int main(), 23]	Let me log pi=  3.141593, str hi, e=2.72 and my class [42, 42] here!
-
-            \endcode
     */
     class Logger {
      public:
@@ -89,9 +89,9 @@ namespace ai {
         Logger(const Logger&) = delete;
         Logger& operator=(const Logger&) = delete;
 
-        auto BuildPrefix(Level level, std::source_location location) const noexcept -> std::string;
+        static auto BuildPrefix(Level level, std::source_location location) -> std::string;
 
-        auto LevelToString(Level level) const noexcept -> std::string;
+        static auto LevelToString(Level level) noexcept -> std::string;
     };
 
 }  // namespace ai

@@ -1,5 +1,2 @@
-# add_library(AutoDiff Logger.cpp)
-# target_include_directories(Logger PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-# include_directories(Logger INTERFACE include)
 add_library(AutoDiff INTERFACE)
 target_include_directories(AutoDiff INTERFACE include)
