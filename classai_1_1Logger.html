@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -69,7 +76,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>ai</b></li><li class="navelem"><a class="el" href="classai_1_1Logger.html">Logger</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceai.html">ai</a></li><li class="navelem"><a class="el" href="classai_1_1Logger.html">Logger</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -77,6 +84,9 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classai_1_1Logger-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ai::Logger Class Reference</div></div>
 </div><!--header-->
@@ -89,62 +99,483 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a20d63b05636949a3dcd52a3966f8e4c4" id="r_a20d63b05636949a3dcd52a3966f8e4c4"><td class="memItemLeft" align="right" valign="top"><a id="a20d63b05636949a3dcd52a3966f8e4c4" name="a20d63b05636949a3dcd52a3966f8e4c4"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4">Level</a> { <b>INFO</b>
-, <b>WARNING</b>
-, <b>ERROR</b>
-, <b>DEBUG</b>
+<tr class="memitem:a20d63b05636949a3dcd52a3966f8e4c4" id="r_a20d63b05636949a3dcd52a3966f8e4c4"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4">Level</a> { <a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4a551b723eafd6a31d444fcb2f5920fbd3">INFO</a>
+, <a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4a059e9861e0400dfbe05c98a841f3f96b">WARNING</a>
+, <a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4abb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a>
+, <a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4adc30ec20708ef7b0f641ef78b7880a15">DEBUG</a>
  }</td></tr>
-<tr class="memdesc:a20d63b05636949a3dcd52a3966f8e4c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log level. <br /></td></tr>
+<tr class="memdesc:a20d63b05636949a3dcd52a3966f8e4c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log level.  <a href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4">More...</a><br /></td></tr>
 <tr class="separator:a20d63b05636949a3dcd52a3966f8e4c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a46d766e7bdad839a5820b4dc7b2d2a75" id="r_a46d766e7bdad839a5820b4dc7b2d2a75"><td class="memItemLeft" align="right" valign="top"><a id="a46d766e7bdad839a5820b4dc7b2d2a75" name="a46d766e7bdad839a5820b4dc7b2d2a75"></a>
-<a class="el" href="classai_1_1Variable.html">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><b>SetOutputStream</b> (std::ostream *<a class="el" href="classai_1_1Variable.html">stream</a>) <a class="el" href="classai_1_1Variable.html">noexcept</a> -&gt; <a class="el" href="classai_1_1Variable.html">void</a></td></tr>
-<tr class="memdesc:a46d766e7bdad839a5820b4dc7b2d2a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the output stream for logger. E.g. file, std::cout, std::cerr. <br /></td></tr>
+<tr class="memitem:a46d766e7bdad839a5820b4dc7b2d2a75" id="r_a46d766e7bdad839a5820b4dc7b2d2a75"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#a46d766e7bdad839a5820b4dc7b2d2a75">SetOutputStream</a> (std::ostream *stream) noexcept -&gt; void</td></tr>
+<tr class="memdesc:a46d766e7bdad839a5820b4dc7b2d2a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the output stream for logger. E.g. file, std::cout, std::cerr.  <br /></td></tr>
 <tr class="separator:a46d766e7bdad839a5820b4dc7b2d2a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ffd2c9fa2064f233b0370927fd9e40b" id="r_a2ffd2c9fa2064f233b0370927fd9e40b"><td class="memItemLeft" align="right" valign="top"><a id="a2ffd2c9fa2064f233b0370927fd9e40b" name="a2ffd2c9fa2064f233b0370927fd9e40b"></a>
-<a class="el" href="classai_1_1Variable.html">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><b>SetBuferization</b> (<a class="el" href="classai_1_1Variable.html">bool</a> <a class="el" href="classai_1_1Variable.html">buferization</a>) <a class="el" href="classai_1_1Variable.html">noexcept</a> -&gt; <a class="el" href="classai_1_1Variable.html">void</a></td></tr>
-<tr class="memdesc:a2ffd2c9fa2064f233b0370927fd9e40b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the buferization flag. <br /></td></tr>
+<tr class="memitem:a2ffd2c9fa2064f233b0370927fd9e40b" id="r_a2ffd2c9fa2064f233b0370927fd9e40b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#a2ffd2c9fa2064f233b0370927fd9e40b">SetBuferization</a> (bool buferization) noexcept -&gt; void</td></tr>
+<tr class="memdesc:a2ffd2c9fa2064f233b0370927fd9e40b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the buferization flag.  <br /></td></tr>
 <tr class="separator:a2ffd2c9fa2064f233b0370927fd9e40b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad76c957075cbdbaa01a52e405c791087" id="r_ad76c957075cbdbaa01a52e405c791087"><td class="memTemplParams" colspan="2"><a id="ad76c957075cbdbaa01a52e405c791087" name="ad76c957075cbdbaa01a52e405c791087"></a>
-template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:ad76c957075cbdbaa01a52e405c791087"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classai_1_1Variable.html">auto</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>Log</b> (<a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4">Level</a> <a class="el" href="classai_1_1Variable.html">level</a>, std::source_location <a class="el" href="classai_1_1Variable.html">location</a>, <a class="el" href="classai_1_1Variable.html">const</a> std::string &amp;<a class="el" href="classai_1_1Variable.html">message</a>, <a class="el" href="classai_1_1Variable.html">Args</a> &amp;&amp;... <a class="el" href="classai_1_1Variable.html">args</a>) -&gt; <a class="el" href="classai_1_1Variable.html">void</a></td></tr>
-<tr class="memdesc:ad76c957075cbdbaa01a52e405c791087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logging with variadic arguments. <br /></td></tr>
+<tr class="memitem:ad76c957075cbdbaa01a52e405c791087" id="r_ad76c957075cbdbaa01a52e405c791087"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:ad76c957075cbdbaa01a52e405c791087"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#ad76c957075cbdbaa01a52e405c791087">Log</a> (<a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4">Level</a> level, std::source_location location, const std::string &amp;message, Args &amp;&amp;... args) -&gt; void</td></tr>
+<tr class="memdesc:ad76c957075cbdbaa01a52e405c791087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logging with variadic arguments.  <br /></td></tr>
 <tr class="separator:ad76c957075cbdbaa01a52e405c791087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:afd098d21fd4fed3ae82577aa4fe3de6c" id="r_afd098d21fd4fed3ae82577aa4fe3de6c"><td class="memItemLeft" align="right" valign="top"><a id="afd098d21fd4fed3ae82577aa4fe3de6c" name="afd098d21fd4fed3ae82577aa4fe3de6c"></a>
-<a class="el" href="classai_1_1Variable.html">static</a> <a class="el" href="classai_1_1Variable.html">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetInstance</b> () <a class="el" href="classai_1_1Variable.html">noexcept</a> -&gt; <a class="el" href="classai_1_1Logger.html">Logger</a> &amp;</td></tr>
+<tr class="memitem:afd098d21fd4fed3ae82577aa4fe3de6c" id="r_afd098d21fd4fed3ae82577aa4fe3de6c"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#afd098d21fd4fed3ae82577aa4fe3de6c">GetInstance</a> () noexcept -&gt; <a class="el" href="classai_1_1Logger.html">Logger</a> &amp;</td></tr>
 <tr class="separator:afd098d21fd4fed3ae82577aa4fe3de6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a5e548ef7d110abaec56f898aea4ef509" id="r_a5e548ef7d110abaec56f898aea4ef509"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#a5e548ef7d110abaec56f898aea4ef509">Logger</a> ()=default</td></tr>
+<tr class="separator:a5e548ef7d110abaec56f898aea4ef509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52e1798c5bd3705653e7357e0f2cccae" id="r_a52e1798c5bd3705653e7357e0f2cccae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#a52e1798c5bd3705653e7357e0f2cccae">~Logger</a> ()=default</td></tr>
+<tr class="separator:a52e1798c5bd3705653e7357e0f2cccae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c6b2b52f94a14afafc6a025352fe82d" id="r_a8c6b2b52f94a14afafc6a025352fe82d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#a8c6b2b52f94a14afafc6a025352fe82d">Logger</a> (const <a class="el" href="classai_1_1Logger.html">Logger</a> &amp;)=delete</td></tr>
+<tr class="separator:a8c6b2b52f94a14afafc6a025352fe82d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a086dbcb2ff54f73136e41fea269476" id="r_a5a086dbcb2ff54f73136e41fea269476"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classai_1_1Logger.html">Logger</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#a5a086dbcb2ff54f73136e41fea269476">operator=</a> (const <a class="el" href="classai_1_1Logger.html">Logger</a> &amp;)=delete</td></tr>
+<tr class="separator:a5a086dbcb2ff54f73136e41fea269476"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:ad80a1523a2f110930e4a19cb0b717ce1" id="r_ad80a1523a2f110930e4a19cb0b717ce1"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#ad80a1523a2f110930e4a19cb0b717ce1">BuildPrefix</a> (<a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4">Level</a> level, std::source_location location) -&gt; std::string</td></tr>
+<tr class="separator:ad80a1523a2f110930e4a19cb0b717ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5260193367cd5d58ae2de6a8a6291439" id="r_a5260193367cd5d58ae2de6a8a6291439"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#a5260193367cd5d58ae2de6a8a6291439">LevelToString</a> (<a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4">Level</a> level) noexcept -&gt; std::string</td></tr>
+<tr class="separator:a5260193367cd5d58ae2de6a8a6291439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a911d90952da538988c11806409c69aeb" id="r_a911d90952da538988c11806409c69aeb"><td class="memItemLeft" align="right" valign="top">std::ostream *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#a911d90952da538988c11806409c69aeb">m_outputStream</a> = &amp;std::cout</td></tr>
+<tr class="separator:a911d90952da538988c11806409c69aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ea88d2bc8d5e5209d177eaa394b4647" id="r_a3ea88d2bc8d5e5209d177eaa394b4647"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#a3ea88d2bc8d5e5209d177eaa394b4647">m_mutex</a></td></tr>
+<tr class="separator:a3ea88d2bc8d5e5209d177eaa394b4647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fb52604c640e4c9a2db03b8a19e54fd" id="r_a6fb52604c640e4c9a2db03b8a19e54fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#a6fb52604c640e4c9a2db03b8a19e54fd">m_buferization</a> {false}</td></tr>
+<tr class="separator:a6fb52604c640e4c9a2db03b8a19e54fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Static class for logging. </p>
 <p>Based on the singleton pattern, thread safety. The default stream is std::cout. It uses std::vformat for formating. For custom classes logging you need to implement specialization of std::formatter for your class.</p>
-<p>Setting output stream: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> <a class="code hl_class" href="classai_1_1Variable.html">file</a> = std::make_unique&lt;std::ofstream&gt;(<span class="stringliteral">&quot;log.log&quot;</span>);</div>
-<div class="line">Logger::GetInstance().SetOutputStream(<a class="code hl_class" href="classai_1_1Variable.html">file</a>.get());</div>
-<div class="ttc" id="aclassai_1_1Variable_html"><div class="ttname"><a href="classai_1_1Variable.html">ai::Variable</a></div><div class="ttdef"><b>Definition</b> Variable.hpp:9</div></div>
-</div><!-- fragment --><p> Custom class logging: </p><div class="fragment"><div class="line">     <span class="keyword">class </span><a class="code hl_class" href="classai_1_1Variable.html">MyClass</a> {</div>
-<div class="line">      <span class="keyword">public</span>:</div>
-<div class="line">         <span class="keywordtype">int</span> <a class="code hl_class" href="classai_1_1Variable.html">x</a> = 42;</div>
-<div class="line">         <span class="keywordtype">int</span> <a class="code hl_class" href="classai_1_1Variable.html">y</a> = 42;</div>
-<div class="line">     };</div>
+<p>Setting output stream: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> file = std::make_unique&lt;std::ofstream&gt;(<span class="stringliteral">&quot;log.log&quot;</span>);</div>
+<div class="line"><a class="code hl_function" href="classai_1_1Logger.html#afd098d21fd4fed3ae82577aa4fe3de6c">Logger::GetInstance</a>().SetOutputStream(file.get());</div>
+<div class="ttc" id="aclassai_1_1Logger_html_afd098d21fd4fed3ae82577aa4fe3de6c"><div class="ttname"><a href="classai_1_1Logger.html#afd098d21fd4fed3ae82577aa4fe3de6c">ai::Logger::GetInstance</a></div><div class="ttdeci">static auto GetInstance() noexcept -&gt; Logger &amp;</div><div class="ttdef"><b>Definition</b> Logger.cpp:21</div></div>
+</div><!-- fragment --><p> Custom class logging: </p><div class="fragment"><div class="line">    <span class="keyword">class </span>MyClass {</div>
+<div class="line">        <span class="keyword">public</span>:</div>
+<div class="line">        <span class="keywordtype">int</span> x = 42;</div>
+<div class="line">        <span class="keywordtype">int</span> y = 42;</div>
+<div class="line">    };</div>
 <div class="line"> </div>
-<div class="line">     <span class="keyword">template</span> &lt;&gt;</div>
-<div class="line">     <span class="keyword">struct </span>std::formatter&lt;<a class="code hl_class" href="classai_1_1Variable.html">MyClass</a>&gt; : std::formatter&lt;std::string&gt; {</div>
-<div class="line">         <span class="keyword">auto</span> <a class="code hl_class" href="classai_1_1Variable.html">format</a>(<a class="code hl_class" href="classai_1_1Variable.html">MyClass</a> <a class="code hl_class" href="classai_1_1Variable.html">p</a>, <a class="code hl_class" href="classai_1_1Variable.html">format_context</a>&amp; <a class="code hl_class" href="classai_1_1Variable.html">ctx</a>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_class" href="classai_1_1Variable.html">formatter&lt;string&gt;::format</a>(std::format(<span class="stringliteral">&quot;[{}, {}]&quot;</span>, <a class="code hl_class" href="classai_1_1Variable.html">p</a>.x, <a class="code hl_class" href="classai_1_1Variable.html">p</a>.y),</div>
-<div class="line"><a class="code hl_class" href="classai_1_1Variable.html">ctx</a>); }</div>
-<div class="line">     };</div>
+<div class="line">    <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line">    <span class="keyword">struct </span>std::formatter&lt;MyClass&gt; : std::formatter&lt;std::string&gt; {</div>
+<div class="line">        <span class="keyword">auto</span> format(MyClass p, format_context&amp; ctx)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> formatter&lt;string&gt;::format(std::format(<span class="stringliteral">&quot;[{}, {}]&quot;</span>, p.x, p.y),</div>
+<div class="line">ctx); }</div>
+<div class="line">    };</div>
 <div class="line"> </div>
-<div class="line">     ...</div>
+<div class="line">    ...</div>
 <div class="line"> </div>
-<div class="line">     <span class="comment">// logging</span></div>
-<div class="line">     LOG_INFO(<span class="stringliteral">&quot;Let me log pi={:10f}, str {}, e={:{}.{}f} and my class {} here!&quot;</span>, pi, <span class="stringliteral">&quot;hi&quot;</span>, e, 3, 2, MyClass{});</div>
-<div class="line">     <span class="comment">// [INFO]  [18:06:52.588]  [file.cpp, int main(), 23]  Let me log pi=  3.141593, str hi, e=2.72 and my class [42, 42] here!</span></div>
-</div><!-- fragment --> </div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="line">    <span class="comment">// logging</span></div>
+<div class="line">    <a class="code hl_define" href="Logger_8hpp.html#a378e28bfcb78d17285210d6bbb70a083">LOG_INFO</a>(<span class="stringliteral">&quot;Let me log pi={:10f}, str {}, e={:{}.{}f} and my class {} here!&quot;</span>, pi, <span class="stringliteral">&quot;hi&quot;</span>, e, 3, 2, MyClass{});</div>
+<div class="line">    <span class="comment">// [INFO]   [18:06:52.588]  [file.cpp, int main(), 23]  Let me log pi=  3.141593, str hi, e=2.72 and my class [42, 42] here!</span></div>
+<div class="ttc" id="aLogger_8hpp_html_a378e28bfcb78d17285210d6bbb70a083"><div class="ttname"><a href="Logger_8hpp.html#a378e28bfcb78d17285210d6bbb70a083">LOG_INFO</a></div><div class="ttdeci">#define LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> Logger.hpp:127</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a20d63b05636949a3dcd52a3966f8e4c4" name="a20d63b05636949a3dcd52a3966f8e4c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20d63b05636949a3dcd52a3966f8e4c4">&#9670;&#160;</a></span>Level</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4">ai::Logger::Level</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Log level. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a20d63b05636949a3dcd52a3966f8e4c4a551b723eafd6a31d444fcb2f5920fbd3" name="a20d63b05636949a3dcd52a3966f8e4c4a551b723eafd6a31d444fcb2f5920fbd3"></a>INFO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a20d63b05636949a3dcd52a3966f8e4c4a059e9861e0400dfbe05c98a841f3f96b" name="a20d63b05636949a3dcd52a3966f8e4c4a059e9861e0400dfbe05c98a841f3f96b"></a>WARNING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a20d63b05636949a3dcd52a3966f8e4c4abb1ca97ec761fc37101737ba0aa2e7c5" name="a20d63b05636949a3dcd52a3966f8e4c4abb1ca97ec761fc37101737ba0aa2e7c5"></a>ERROR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a20d63b05636949a3dcd52a3966f8e4c4adc30ec20708ef7b0f641ef78b7880a15" name="a20d63b05636949a3dcd52a3966f8e4c4adc30ec20708ef7b0f641ef78b7880a15"></a>DEBUG&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5e548ef7d110abaec56f898aea4ef509" name="a5e548ef7d110abaec56f898aea4ef509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e548ef7d110abaec56f898aea4ef509">&#9670;&#160;</a></span>Logger() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ai::Logger::Logger </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a52e1798c5bd3705653e7357e0f2cccae" name="a52e1798c5bd3705653e7357e0f2cccae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52e1798c5bd3705653e7357e0f2cccae">&#9670;&#160;</a></span>~Logger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ai::Logger::~Logger </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8c6b2b52f94a14afafc6a025352fe82d" name="a8c6b2b52f94a14afafc6a025352fe82d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c6b2b52f94a14afafc6a025352fe82d">&#9670;&#160;</a></span>Logger() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ai::Logger::Logger </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classai_1_1Logger.html">Logger</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad80a1523a2f110930e4a19cb0b717ce1" name="ad80a1523a2f110930e4a19cb0b717ce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad80a1523a2f110930e4a19cb0b717ce1">&#9670;&#160;</a></span>BuildPrefix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ai::Logger::BuildPrefix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4">Level</a>&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::source_location&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::string</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd098d21fd4fed3ae82577aa4fe3de6c" name="afd098d21fd4fed3ae82577aa4fe3de6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd098d21fd4fed3ae82577aa4fe3de6c">&#9670;&#160;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ai::Logger::GetInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="classai_1_1Logger.html">Logger</a>&amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5260193367cd5d58ae2de6a8a6291439" name="a5260193367cd5d58ae2de6a8a6291439"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5260193367cd5d58ae2de6a8a6291439">&#9670;&#160;</a></span>LevelToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ai::Logger::LevelToString </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4">Level</a>&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td> -&gt; std::string</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad76c957075cbdbaa01a52e405c791087" name="ad76c957075cbdbaa01a52e405c791087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad76c957075cbdbaa01a52e405c791087">&#9670;&#160;</a></span>Log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ai::Logger::Log </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4">Level</a>&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::source_location&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; void </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logging with variadic arguments. </p>
+
+</div>
+</div>
+<a id="a5a086dbcb2ff54f73136e41fea269476" name="a5a086dbcb2ff54f73136e41fea269476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a086dbcb2ff54f73136e41fea269476">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classai_1_1Logger.html">Logger</a> &amp; ai::Logger::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classai_1_1Logger.html">Logger</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2ffd2c9fa2064f233b0370927fd9e40b" name="a2ffd2c9fa2064f233b0370927fd9e40b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ffd2c9fa2064f233b0370927fd9e40b">&#9670;&#160;</a></span>SetBuferization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ai::Logger::SetBuferization </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>buferization</em></td><td>)</td>
+          <td> -&gt; void</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the buferization flag. </p>
+
+</div>
+</div>
+<a id="a46d766e7bdad839a5820b4dc7b2d2a75" name="a46d766e7bdad839a5820b4dc7b2d2a75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46d766e7bdad839a5820b4dc7b2d2a75">&#9670;&#160;</a></span>SetOutputStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ai::Logger::SetOutputStream </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream *&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td> -&gt; void</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the output stream for logger. E.g. file, std::cout, std::cerr. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a6fb52604c640e4c9a2db03b8a19e54fd" name="a6fb52604c640e4c9a2db03b8a19e54fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fb52604c640e4c9a2db03b8a19e54fd">&#9670;&#160;</a></span>m_buferization</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ai::Logger::m_buferization {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ea88d2bc8d5e5209d177eaa394b4647" name="a3ea88d2bc8d5e5209d177eaa394b4647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ea88d2bc8d5e5209d177eaa394b4647">&#9670;&#160;</a></span>m_mutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex ai::Logger::m_mutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a911d90952da538988c11806409c69aeb" name="a911d90952da538988c11806409c69aeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a911d90952da538988c11806409c69aeb">&#9670;&#160;</a></span>m_outputStream</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream* ai::Logger::m_outputStream = &amp;std::cout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>libs/Logger/<a class="el" href="Logger_8hpp_source.html">Logger.hpp</a></li>
-<li>libs/Logger/<b>Logger.cpp</b></li>
+<li>libs/Logger/<a class="el" href="Logger_8cpp.html">Logger.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

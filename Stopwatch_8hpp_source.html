@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -77,49 +84,70 @@ $(document).ready(function() { init_codefold(0); });
   <div class="headertitle"><div class="title">Stopwatch.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="Stopwatch_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Logger.hpp&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Logger_8hpp.html">Logger.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using </span>Clock = std::chrono::high_resolution_clock;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="Stopwatch_8hpp.html#accf829b29dcee7a09273bd9101f04e89">    7</a></span><span class="keyword">using </span><a class="code hl_typedef" href="Stopwatch_8hpp.html#accf829b29dcee7a09273bd9101f04e89">Clock</a> = std::chrono::high_resolution_clock;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classStopwatch.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="classStopwatch.html">Stopwatch</a> {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">auto</span> Reset() -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        m_numOfMeasurements = 0;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        m_sumOfMeasurements = 0;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        m_sumOfSquaredMeasurements = 0;</div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classStopwatch.html#abc691f884bc8b7052932f5a342021742">   11</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classStopwatch.html#abc691f884bc8b7052932f5a342021742">Reset</a>() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <a class="code hl_variable" href="classStopwatch.html#a2114c5426691efb427a1e78683028e49">m_numOfMeasurements</a> = 0;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <a class="code hl_variable" href="classStopwatch.html#aa254732e4df71c62aa0463127ed9dcef">m_sumOfMeasurements</a> = 0;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_variable" href="classStopwatch.html#ac7b4bd521fb786e81376136d20cc90a6">m_sumOfSquaredMeasurements</a> = 0;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">auto</span> Start() -&gt; <span class="keywordtype">void</span> { m_startTime = Clock::now(); }</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">auto</span> Stop() -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        m_stopTime = Clock::now();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        int64_t time = GetMeasuredTimeInMicroseconds();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        m_numOfMeasurements += 1;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        m_sumOfMeasurements += time;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        m_sumOfSquaredMeasurements += time * time;</div>
+</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classStopwatch.html#af7f456da2dd916d4c405ed545e6efd3e">   16</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classStopwatch.html#af7f456da2dd916d4c405ed545e6efd3e">Start</a>() -&gt; <span class="keywordtype">void</span> { <a class="code hl_variable" href="classStopwatch.html#a5697a406d756c01e885fadd7875c2121">m_startTime</a> = Clock::now(); }</div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classStopwatch.html#acd7cef08fdf7982121b1f8332a2c0a4f">   17</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classStopwatch.html#acd7cef08fdf7982121b1f8332a2c0a4f">Stop</a>() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_variable" href="classStopwatch.html#ac51b934f79fc466ab5d4b55150b3a6d4">m_stopTime</a> = Clock::now();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        int64_t time = <a class="code hl_function" href="classStopwatch.html#ad900b5b376d9732bb671d53b919122d0">GetMeasuredTimeInMicroseconds</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_variable" href="classStopwatch.html#a2114c5426691efb427a1e78683028e49">m_numOfMeasurements</a> += 1;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_variable" href="classStopwatch.html#aa254732e4df71c62aa0463127ed9dcef">m_sumOfMeasurements</a> += time;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_variable" href="classStopwatch.html#ac7b4bd521fb786e81376136d20cc90a6">m_sumOfSquaredMeasurements</a> += time * time;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">auto</span> GetMeasuredTimeInMicroseconds() <span class="keyword">const</span> -&gt; int64_t {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(m_stopTime - m_startTime).count();</div>
+</div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classStopwatch.html#ad900b5b376d9732bb671d53b919122d0">   24</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classStopwatch.html#ad900b5b376d9732bb671d53b919122d0">GetMeasuredTimeInMicroseconds</a>() const -&gt; int64_t {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(<a class="code hl_variable" href="classStopwatch.html#ac51b934f79fc466ab5d4b55150b3a6d4">m_stopTime</a> - <a class="code hl_variable" href="classStopwatch.html#a5697a406d756c01e885fadd7875c2121">m_startTime</a>).count();</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
+</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">auto</span> GetAVG() -&gt; int64_t { <span class="keywordflow">return</span> m_sumOfMeasurements / m_numOfMeasurements; }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">auto</span> GetSTD() -&gt; int64_t {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">return</span> std::sqrt((m_numOfMeasurements * m_sumOfSquaredMeasurements - m_sumOfMeasurements * m_sumOfMeasurements) /</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                         (m_numOfMeasurements * (m_numOfMeasurements - 1)));</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classStopwatch.html#a4c956ec8167466656eeaa14bb12e8361">   28</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classStopwatch.html#a4c956ec8167466656eeaa14bb12e8361">GetAVG</a>() -&gt; int64_t { <span class="keywordflow">return</span> <a class="code hl_variable" href="classStopwatch.html#aa254732e4df71c62aa0463127ed9dcef">m_sumOfMeasurements</a> / <a class="code hl_variable" href="classStopwatch.html#a2114c5426691efb427a1e78683028e49">m_numOfMeasurements</a>; }</div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classStopwatch.html#a34b4b2ab3aa5cc091aad80b72a7832b7">   29</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classStopwatch.html#a34b4b2ab3aa5cc091aad80b72a7832b7">GetSTD</a>() -&gt; int64_t {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">return</span> std::sqrt((<a class="code hl_variable" href="classStopwatch.html#a2114c5426691efb427a1e78683028e49">m_numOfMeasurements</a> * <a class="code hl_variable" href="classStopwatch.html#ac7b4bd521fb786e81376136d20cc90a6">m_sumOfSquaredMeasurements</a> - <a class="code hl_variable" href="classStopwatch.html#aa254732e4df71c62aa0463127ed9dcef">m_sumOfMeasurements</a> * <a class="code hl_variable" href="classStopwatch.html#aa254732e4df71c62aa0463127ed9dcef">m_sumOfMeasurements</a>) /</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                         (<a class="code hl_variable" href="classStopwatch.html#a2114c5426691efb427a1e78683028e49">m_numOfMeasurements</a> * (<a class="code hl_variable" href="classStopwatch.html#a2114c5426691efb427a1e78683028e49">m_numOfMeasurements</a> - 1)));</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
+</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    std::chrono::time_point&lt;Clock&gt; m_startTime;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    std::chrono::time_point&lt;Clock&gt; m_stopTime;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    int64_t m_numOfMeasurements{};</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    int64_t m_sumOfSquaredMeasurements{};</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    int64_t m_sumOfMeasurements{};</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classStopwatch.html#a5697a406d756c01e885fadd7875c2121">   35</a></span>    std::chrono::time_point&lt;Clock&gt; <a class="code hl_variable" href="classStopwatch.html#a5697a406d756c01e885fadd7875c2121">m_startTime</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classStopwatch.html#ac51b934f79fc466ab5d4b55150b3a6d4">   36</a></span>    std::chrono::time_point&lt;Clock&gt; <a class="code hl_variable" href="classStopwatch.html#ac51b934f79fc466ab5d4b55150b3a6d4">m_stopTime</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classStopwatch.html#a2114c5426691efb427a1e78683028e49">   37</a></span>    int64_t <a class="code hl_variable" href="classStopwatch.html#a2114c5426691efb427a1e78683028e49">m_numOfMeasurements</a>{};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classStopwatch.html#ac7b4bd521fb786e81376136d20cc90a6">   38</a></span>    int64_t <a class="code hl_variable" href="classStopwatch.html#ac7b4bd521fb786e81376136d20cc90a6">m_sumOfSquaredMeasurements</a>{};</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classStopwatch.html#aa254732e4df71c62aa0463127ed9dcef">   39</a></span>    int64_t <a class="code hl_variable" href="classStopwatch.html#aa254732e4df71c62aa0463127ed9dcef">m_sumOfMeasurements</a>{};</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
 </div>
+<div class="ttc" id="aLogger_8hpp_html"><div class="ttname"><a href="Logger_8hpp.html">Logger.hpp</a></div></div>
+<div class="ttc" id="aStopwatch_8hpp_html_accf829b29dcee7a09273bd9101f04e89"><div class="ttname"><a href="Stopwatch_8hpp.html#accf829b29dcee7a09273bd9101f04e89">Clock</a></div><div class="ttdeci">std::chrono::high_resolution_clock Clock</div><div class="ttdef"><b>Definition</b> Stopwatch.hpp:7</div></div>
 <div class="ttc" id="aclassStopwatch_html"><div class="ttname"><a href="classStopwatch.html">Stopwatch</a></div><div class="ttdef"><b>Definition</b> Stopwatch.hpp:9</div></div>
+<div class="ttc" id="aclassStopwatch_html_a2114c5426691efb427a1e78683028e49"><div class="ttname"><a href="classStopwatch.html#a2114c5426691efb427a1e78683028e49">Stopwatch::m_numOfMeasurements</a></div><div class="ttdeci">int64_t m_numOfMeasurements</div><div class="ttdef"><b>Definition</b> Stopwatch.hpp:37</div></div>
+<div class="ttc" id="aclassStopwatch_html_a34b4b2ab3aa5cc091aad80b72a7832b7"><div class="ttname"><a href="classStopwatch.html#a34b4b2ab3aa5cc091aad80b72a7832b7">Stopwatch::GetSTD</a></div><div class="ttdeci">auto GetSTD() -&gt; int64_t</div><div class="ttdef"><b>Definition</b> Stopwatch.hpp:29</div></div>
+<div class="ttc" id="aclassStopwatch_html_a4c956ec8167466656eeaa14bb12e8361"><div class="ttname"><a href="classStopwatch.html#a4c956ec8167466656eeaa14bb12e8361">Stopwatch::GetAVG</a></div><div class="ttdeci">auto GetAVG() -&gt; int64_t</div><div class="ttdef"><b>Definition</b> Stopwatch.hpp:28</div></div>
+<div class="ttc" id="aclassStopwatch_html_a5697a406d756c01e885fadd7875c2121"><div class="ttname"><a href="classStopwatch.html#a5697a406d756c01e885fadd7875c2121">Stopwatch::m_startTime</a></div><div class="ttdeci">std::chrono::time_point&lt; Clock &gt; m_startTime</div><div class="ttdef"><b>Definition</b> Stopwatch.hpp:35</div></div>
+<div class="ttc" id="aclassStopwatch_html_aa254732e4df71c62aa0463127ed9dcef"><div class="ttname"><a href="classStopwatch.html#aa254732e4df71c62aa0463127ed9dcef">Stopwatch::m_sumOfMeasurements</a></div><div class="ttdeci">int64_t m_sumOfMeasurements</div><div class="ttdef"><b>Definition</b> Stopwatch.hpp:39</div></div>
+<div class="ttc" id="aclassStopwatch_html_abc691f884bc8b7052932f5a342021742"><div class="ttname"><a href="classStopwatch.html#abc691f884bc8b7052932f5a342021742">Stopwatch::Reset</a></div><div class="ttdeci">auto Reset() -&gt; void</div><div class="ttdef"><b>Definition</b> Stopwatch.hpp:11</div></div>
+<div class="ttc" id="aclassStopwatch_html_ac51b934f79fc466ab5d4b55150b3a6d4"><div class="ttname"><a href="classStopwatch.html#ac51b934f79fc466ab5d4b55150b3a6d4">Stopwatch::m_stopTime</a></div><div class="ttdeci">std::chrono::time_point&lt; Clock &gt; m_stopTime</div><div class="ttdef"><b>Definition</b> Stopwatch.hpp:36</div></div>
+<div class="ttc" id="aclassStopwatch_html_ac7b4bd521fb786e81376136d20cc90a6"><div class="ttname"><a href="classStopwatch.html#ac7b4bd521fb786e81376136d20cc90a6">Stopwatch::m_sumOfSquaredMeasurements</a></div><div class="ttdeci">int64_t m_sumOfSquaredMeasurements</div><div class="ttdef"><b>Definition</b> Stopwatch.hpp:38</div></div>
+<div class="ttc" id="aclassStopwatch_html_acd7cef08fdf7982121b1f8332a2c0a4f"><div class="ttname"><a href="classStopwatch.html#acd7cef08fdf7982121b1f8332a2c0a4f">Stopwatch::Stop</a></div><div class="ttdeci">auto Stop() -&gt; void</div><div class="ttdef"><b>Definition</b> Stopwatch.hpp:17</div></div>
+<div class="ttc" id="aclassStopwatch_html_ad900b5b376d9732bb671d53b919122d0"><div class="ttname"><a href="classStopwatch.html#ad900b5b376d9732bb671d53b919122d0">Stopwatch::GetMeasuredTimeInMicroseconds</a></div><div class="ttdeci">auto GetMeasuredTimeInMicroseconds() const -&gt; int64_t</div><div class="ttdef"><b>Definition</b> Stopwatch.hpp:24</div></div>
+<div class="ttc" id="aclassStopwatch_html_af7f456da2dd916d4c405ed545e6efd3e"><div class="ttname"><a href="classStopwatch.html#af7f456da2dd916d4c405ed545e6efd3e">Stopwatch::Start</a></div><div class="ttdeci">auto Start() -&gt; void</div><div class="ttdef"><b>Definition</b> Stopwatch.hpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

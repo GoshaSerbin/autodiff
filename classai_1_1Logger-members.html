@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -69,7 +76,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>ai</b></li><li class="navelem"><a class="el" href="classai_1_1Logger.html">Logger</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceai.html">ai</a></li><li class="navelem"><a class="el" href="classai_1_1Logger.html">Logger</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -79,11 +86,20 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="classai_1_1Logger.html">ai::Logger</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>GetInstance</b>() noexcept -&gt; Logger &amp; (defined in <a class="el" href="classai_1_1Logger.html">ai::Logger</a>)</td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4">Level</a> enum name</td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classai_1_1Logger.html#ad80a1523a2f110930e4a19cb0b717ce1">BuildPrefix</a>(Level level, std::source_location location) -&gt; std::string</td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classai_1_1Logger.html#afd098d21fd4fed3ae82577aa4fe3de6c">GetInstance</a>() noexcept -&gt; Logger &amp;</td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4">Level</a> enum name</td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classai_1_1Logger.html#a5260193367cd5d58ae2de6a8a6291439">LevelToString</a>(Level level) noexcept -&gt; std::string</td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classai_1_1Logger.html#ad76c957075cbdbaa01a52e405c791087">Log</a>(Level level, std::source_location location, const std::string &amp;message, Args &amp;&amp;... args) -&gt; void</td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classai_1_1Logger.html#a5e548ef7d110abaec56f898aea4ef509">Logger</a>()=default</td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classai_1_1Logger.html#a8c6b2b52f94a14afafc6a025352fe82d">Logger</a>(const Logger &amp;)=delete</td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classai_1_1Logger.html#a6fb52604c640e4c9a2db03b8a19e54fd">m_buferization</a></td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classai_1_1Logger.html#a3ea88d2bc8d5e5209d177eaa394b4647">m_mutex</a></td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classai_1_1Logger.html#a911d90952da538988c11806409c69aeb">m_outputStream</a></td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classai_1_1Logger.html#a5a086dbcb2ff54f73136e41fea269476">operator=</a>(const Logger &amp;)=delete</td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classai_1_1Logger.html#a2ffd2c9fa2064f233b0370927fd9e40b">SetBuferization</a>(bool buferization) noexcept -&gt; void</td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classai_1_1Logger.html#a46d766e7bdad839a5820b4dc7b2d2a75">SetOutputStream</a>(std::ostream *stream) noexcept -&gt; void</td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classai_1_1Logger.html#a52e1798c5bd3705653e7357e0f2cccae">~Logger</a>()=default</td><td class="entry"><a class="el" href="classai_1_1Logger.html">ai::Logger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

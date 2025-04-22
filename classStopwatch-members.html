@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -75,12 +82,17 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="classStopwatch.html">Stopwatch</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>GetAVG</b>() -&gt; int64_t (defined in <a class="el" href="classStopwatch.html">Stopwatch</a>)</td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>GetMeasuredTimeInMicroseconds</b>() const -&gt; int64_t (defined in <a class="el" href="classStopwatch.html">Stopwatch</a>)</td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>GetSTD</b>() -&gt; int64_t (defined in <a class="el" href="classStopwatch.html">Stopwatch</a>)</td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Reset</b>() -&gt; void (defined in <a class="el" href="classStopwatch.html">Stopwatch</a>)</td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Start</b>() -&gt; void (defined in <a class="el" href="classStopwatch.html">Stopwatch</a>)</td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Stop</b>() -&gt; void (defined in <a class="el" href="classStopwatch.html">Stopwatch</a>)</td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classStopwatch.html#a4c956ec8167466656eeaa14bb12e8361">GetAVG</a>() -&gt; int64_t</td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classStopwatch.html#ad900b5b376d9732bb671d53b919122d0">GetMeasuredTimeInMicroseconds</a>() const -&gt; int64_t</td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classStopwatch.html#a34b4b2ab3aa5cc091aad80b72a7832b7">GetSTD</a>() -&gt; int64_t</td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classStopwatch.html#a2114c5426691efb427a1e78683028e49">m_numOfMeasurements</a></td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classStopwatch.html#a5697a406d756c01e885fadd7875c2121">m_startTime</a></td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classStopwatch.html#ac51b934f79fc466ab5d4b55150b3a6d4">m_stopTime</a></td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classStopwatch.html#aa254732e4df71c62aa0463127ed9dcef">m_sumOfMeasurements</a></td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classStopwatch.html#ac7b4bd521fb786e81376136d20cc90a6">m_sumOfSquaredMeasurements</a></td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classStopwatch.html#abc691f884bc8b7052932f5a342021742">Reset</a>() -&gt; void</td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classStopwatch.html#af7f456da2dd916d4c405ed545e6efd3e">Start</a>() -&gt; void</td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classStopwatch.html#acd7cef08fdf7982121b1f8332a2c0a4f">Stop</a>() -&gt; void</td><td class="entry"><a class="el" href="classStopwatch.html">Stopwatch</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tensor_0',['Tensor',['../classTensor.html',1,'']]],
-  ['tensordata_1',['TensorData',['../classTensorData.html',1,'']]]
+  ['logger_0',['Logger',['../classai_1_1Logger.html',1,'ai']]],
+  ['loggertests_1',['LoggerTests',['../classLoggerTests.html',1,'']]]
 ];

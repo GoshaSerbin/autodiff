@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -74,10 +81,11 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>sudo apt install doxygen graphviz clang-format clang-tidy</p>
 <p>doxygen -g doxygen Doxyfile</p>
-<p>clang-format -i myfile.cpp clang-tidy main.cpp</p>
-<p>g++ main.cpp &ndash;std=c++20 -ftime-report -O3 -march=native -fsanitize=address</p>
+<p>clang-format -i myfile.cpp clang-tidy <a class="el" href="main_8cpp.html">main.cpp</a></p>
+<p>g++ <a class="el" href="main_8cpp.html">main.cpp</a> &ndash;std=c++20 -ftime-report -O3 -march=native -fsanitize=address</p>
 <p>rm -rf build cmake -B build -DCMAKE_SYSTEM_NAME=Android -DCMAKE_ANDROID_NDK=$ANDROID_NDK -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a -DCMAKE_ANDROID_PLATFORM=24</p>
-<p><a href="https://arxiv.org/abs/1811.05031">https://arxiv.org/abs/1811.05031</a> </p>
+<p><a href="https://arxiv.org/abs/1811.05031">https://arxiv.org/abs/1811.05031</a></p>
+<p>sudo apt-get install libgtest-dev libgmock-dev </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logger_0',['Logger',['../classai_1_1Logger.html',1,'ai']]]
+  ['basicbackend_0',['BasicBackend',['../classBasicBackend.html',1,'']]]
 ];

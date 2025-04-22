@@ -7,6 +7,10 @@ digraph "libs/Logger"
   compound=true
   subgraph clusterdir_6719ab1f1f7655efc2fa43f7eb574fd1 {
     graph [ bgcolor="#edf0f7", pencolor="grey25", label="libs", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html",tooltip=""]
-  dir_9b4ca5929e57cbde450c18fcf8d954e6 [label="Logger", fillcolor="#edf0f7", color="grey25", style="filled,bold", URL="dir_9b4ca5929e57cbde450c18fcf8d954e6.html",tooltip=""];
+  subgraph clusterdir_9b4ca5929e57cbde450c18fcf8d954e6 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_9b4ca5929e57cbde450c18fcf8d954e6.html",tooltip=""]
+    dir_9b4ca5929e57cbde450c18fcf8d954e6 [shape=plaintext, label="Logger"];
+  dir_9dcb22bf4d4f51a16826bc17c31b40e0 [label="tests", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_9dcb22bf4d4f51a16826bc17c31b40e0.html",tooltip=""];
+  }
   }
 }

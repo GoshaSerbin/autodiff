@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -71,32 +78,304 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classStopwatch-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Stopwatch Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Stopwatch_8hpp_source.html">Stopwatch.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abc691f884bc8b7052932f5a342021742" id="r_abc691f884bc8b7052932f5a342021742"><td class="memItemLeft" align="right" valign="top"><a id="abc691f884bc8b7052932f5a342021742" name="abc691f884bc8b7052932f5a342021742"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>Reset</b> () -&gt; void</td></tr>
+<tr class="memitem:abc691f884bc8b7052932f5a342021742" id="r_abc691f884bc8b7052932f5a342021742"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStopwatch.html#abc691f884bc8b7052932f5a342021742">Reset</a> () -&gt; void</td></tr>
 <tr class="separator:abc691f884bc8b7052932f5a342021742"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7f456da2dd916d4c405ed545e6efd3e" id="r_af7f456da2dd916d4c405ed545e6efd3e"><td class="memItemLeft" align="right" valign="top"><a id="af7f456da2dd916d4c405ed545e6efd3e" name="af7f456da2dd916d4c405ed545e6efd3e"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>Start</b> () -&gt; void</td></tr>
+<tr class="memitem:af7f456da2dd916d4c405ed545e6efd3e" id="r_af7f456da2dd916d4c405ed545e6efd3e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStopwatch.html#af7f456da2dd916d4c405ed545e6efd3e">Start</a> () -&gt; void</td></tr>
 <tr class="separator:af7f456da2dd916d4c405ed545e6efd3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd7cef08fdf7982121b1f8332a2c0a4f" id="r_acd7cef08fdf7982121b1f8332a2c0a4f"><td class="memItemLeft" align="right" valign="top"><a id="acd7cef08fdf7982121b1f8332a2c0a4f" name="acd7cef08fdf7982121b1f8332a2c0a4f"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>Stop</b> () -&gt; void</td></tr>
+<tr class="memitem:acd7cef08fdf7982121b1f8332a2c0a4f" id="r_acd7cef08fdf7982121b1f8332a2c0a4f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStopwatch.html#acd7cef08fdf7982121b1f8332a2c0a4f">Stop</a> () -&gt; void</td></tr>
 <tr class="separator:acd7cef08fdf7982121b1f8332a2c0a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad900b5b376d9732bb671d53b919122d0" id="r_ad900b5b376d9732bb671d53b919122d0"><td class="memItemLeft" align="right" valign="top"><a id="ad900b5b376d9732bb671d53b919122d0" name="ad900b5b376d9732bb671d53b919122d0"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>GetMeasuredTimeInMicroseconds</b> () const -&gt; int64_t</td></tr>
+<tr class="memitem:ad900b5b376d9732bb671d53b919122d0" id="r_ad900b5b376d9732bb671d53b919122d0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStopwatch.html#ad900b5b376d9732bb671d53b919122d0">GetMeasuredTimeInMicroseconds</a> () const -&gt; int64_t</td></tr>
 <tr class="separator:ad900b5b376d9732bb671d53b919122d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c956ec8167466656eeaa14bb12e8361" id="r_a4c956ec8167466656eeaa14bb12e8361"><td class="memItemLeft" align="right" valign="top"><a id="a4c956ec8167466656eeaa14bb12e8361" name="a4c956ec8167466656eeaa14bb12e8361"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>GetAVG</b> () -&gt; int64_t</td></tr>
+<tr class="memitem:a4c956ec8167466656eeaa14bb12e8361" id="r_a4c956ec8167466656eeaa14bb12e8361"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStopwatch.html#a4c956ec8167466656eeaa14bb12e8361">GetAVG</a> () -&gt; int64_t</td></tr>
 <tr class="separator:a4c956ec8167466656eeaa14bb12e8361"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34b4b2ab3aa5cc091aad80b72a7832b7" id="r_a34b4b2ab3aa5cc091aad80b72a7832b7"><td class="memItemLeft" align="right" valign="top"><a id="a34b4b2ab3aa5cc091aad80b72a7832b7" name="a34b4b2ab3aa5cc091aad80b72a7832b7"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>GetSTD</b> () -&gt; int64_t</td></tr>
+<tr class="memitem:a34b4b2ab3aa5cc091aad80b72a7832b7" id="r_a34b4b2ab3aa5cc091aad80b72a7832b7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStopwatch.html#a34b4b2ab3aa5cc091aad80b72a7832b7">GetSTD</a> () -&gt; int64_t</td></tr>
 <tr class="separator:a34b4b2ab3aa5cc091aad80b72a7832b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5697a406d756c01e885fadd7875c2121" id="r_a5697a406d756c01e885fadd7875c2121"><td class="memItemLeft" align="right" valign="top">std::chrono::time_point&lt; <a class="el" href="Stopwatch_8hpp.html#accf829b29dcee7a09273bd9101f04e89">Clock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStopwatch.html#a5697a406d756c01e885fadd7875c2121">m_startTime</a></td></tr>
+<tr class="separator:a5697a406d756c01e885fadd7875c2121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac51b934f79fc466ab5d4b55150b3a6d4" id="r_ac51b934f79fc466ab5d4b55150b3a6d4"><td class="memItemLeft" align="right" valign="top">std::chrono::time_point&lt; <a class="el" href="Stopwatch_8hpp.html#accf829b29dcee7a09273bd9101f04e89">Clock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStopwatch.html#ac51b934f79fc466ab5d4b55150b3a6d4">m_stopTime</a></td></tr>
+<tr class="separator:ac51b934f79fc466ab5d4b55150b3a6d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2114c5426691efb427a1e78683028e49" id="r_a2114c5426691efb427a1e78683028e49"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStopwatch.html#a2114c5426691efb427a1e78683028e49">m_numOfMeasurements</a> {}</td></tr>
+<tr class="separator:a2114c5426691efb427a1e78683028e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7b4bd521fb786e81376136d20cc90a6" id="r_ac7b4bd521fb786e81376136d20cc90a6"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStopwatch.html#ac7b4bd521fb786e81376136d20cc90a6">m_sumOfSquaredMeasurements</a> {}</td></tr>
+<tr class="separator:ac7b4bd521fb786e81376136d20cc90a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa254732e4df71c62aa0463127ed9dcef" id="r_aa254732e4df71c62aa0463127ed9dcef"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStopwatch.html#aa254732e4df71c62aa0463127ed9dcef">m_sumOfMeasurements</a> {}</td></tr>
+<tr class="separator:aa254732e4df71c62aa0463127ed9dcef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4c956ec8167466656eeaa14bb12e8361" name="a4c956ec8167466656eeaa14bb12e8361"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c956ec8167466656eeaa14bb12e8361">&#9670;&#160;</a></span>GetAVG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Stopwatch::GetAVG </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; int64_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad900b5b376d9732bb671d53b919122d0" name="ad900b5b376d9732bb671d53b919122d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad900b5b376d9732bb671d53b919122d0">&#9670;&#160;</a></span>GetMeasuredTimeInMicroseconds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Stopwatch::GetMeasuredTimeInMicroseconds </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; int64_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a34b4b2ab3aa5cc091aad80b72a7832b7" name="a34b4b2ab3aa5cc091aad80b72a7832b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34b4b2ab3aa5cc091aad80b72a7832b7">&#9670;&#160;</a></span>GetSTD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Stopwatch::GetSTD </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; int64_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc691f884bc8b7052932f5a342021742" name="abc691f884bc8b7052932f5a342021742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc691f884bc8b7052932f5a342021742">&#9670;&#160;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Stopwatch::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; void </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af7f456da2dd916d4c405ed545e6efd3e" name="af7f456da2dd916d4c405ed545e6efd3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f456da2dd916d4c405ed545e6efd3e">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Stopwatch::Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; void </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd7cef08fdf7982121b1f8332a2c0a4f" name="acd7cef08fdf7982121b1f8332a2c0a4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd7cef08fdf7982121b1f8332a2c0a4f">&#9670;&#160;</a></span>Stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Stopwatch::Stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; void </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2114c5426691efb427a1e78683028e49" name="a2114c5426691efb427a1e78683028e49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2114c5426691efb427a1e78683028e49">&#9670;&#160;</a></span>m_numOfMeasurements</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t Stopwatch::m_numOfMeasurements {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5697a406d756c01e885fadd7875c2121" name="a5697a406d756c01e885fadd7875c2121"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5697a406d756c01e885fadd7875c2121">&#9670;&#160;</a></span>m_startTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::chrono::time_point&lt;<a class="el" href="Stopwatch_8hpp.html#accf829b29dcee7a09273bd9101f04e89">Clock</a>&gt; Stopwatch::m_startTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac51b934f79fc466ab5d4b55150b3a6d4" name="ac51b934f79fc466ab5d4b55150b3a6d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac51b934f79fc466ab5d4b55150b3a6d4">&#9670;&#160;</a></span>m_stopTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::chrono::time_point&lt;<a class="el" href="Stopwatch_8hpp.html#accf829b29dcee7a09273bd9101f04e89">Clock</a>&gt; Stopwatch::m_stopTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa254732e4df71c62aa0463127ed9dcef" name="aa254732e4df71c62aa0463127ed9dcef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa254732e4df71c62aa0463127ed9dcef">&#9670;&#160;</a></span>m_sumOfMeasurements</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t Stopwatch::m_sumOfMeasurements {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac7b4bd521fb786e81376136d20cc90a6" name="ac7b4bd521fb786e81376136d20cc90a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7b4bd521fb786e81376136d20cc90a6">&#9670;&#160;</a></span>m_sumOfSquaredMeasurements</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t Stopwatch::m_sumOfSquaredMeasurements {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="Stopwatch_8hpp_source.html">Stopwatch.hpp</a></li>
 </ul>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['variable_0',['Variable',['../classai_1_1Variable.html',1,'ai']]]
+  ['node_0',['Node',['../classauto__diff_1_1Node.html',1,'auto_diff']]]
 ];
