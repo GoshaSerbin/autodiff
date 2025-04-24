@@ -92,6 +92,9 @@ namespace ai {
         static auto BuildPrefix(Level level, std::source_location location) -> std::string;
 
         static auto LevelToString(Level level) noexcept -> std::string;
+
+        /// Returns the current time in string format HH:MM:SS.mmm
+        static auto GetCurrentTime() -> std::string;
     };
 
 }  // namespace ai

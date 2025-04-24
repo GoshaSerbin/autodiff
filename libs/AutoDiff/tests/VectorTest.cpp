@@ -5,7 +5,8 @@
 #include "IModule.hpp"
 #include "Node.hpp"
 
-using namespace auto_diff;
+using auto_diff::Node;
+using auto_diff::NodePtr;
 
 template <typename T>
 class Vec : public std::vector<T> {
@@ -79,10 +80,12 @@ class VectorBackend {
     }
 };
 
-DEFINE_MODULE(VectorSum)
+namespace auto_diff {
+    DEFINE_MODULE(VectorSum)
+}
 
 TEST(AutoDiffTest, Sum2VectorsCase) {
-    VectorSum<Vec<int>, VectorBackend<int>> module;
+    auto_diff::VectorSum<Vec<int>, VectorBackend<int>> module;
     auto a = std::make_shared<VecNode<int>>(Vec<int>{1, 2, 3, 4}, true);
     auto b = std::make_shared<VecNode<int>>(Vec<int>{1, 2, 3, 4}, true);
     auto c = module.Forward({a, b})[0];
@@ -91,11 +94,12 @@ TEST(AutoDiffTest, Sum2VectorsCase) {
     EXPECT_EQ(a->grad, Vec<int>({1, 1, 1, 1}));
     EXPECT_EQ(b->grad, Vec<int>({1, 1, 1, 1}));
 }
-
-DEFINE_MODULE(VectorSplit)
+namespace auto_diff {
+    DEFINE_MODULE(VectorSplit)
+}
 
 TEST(AutoDiffTest, SplitVectorCase) {
-    VectorSplit<Vec<int>, VectorBackend<int>> module;
+    auto_diff::VectorSplit<Vec<int>, VectorBackend<int>> module;
     auto a = std::make_shared<VecNode<int>>(Vec<int>{1, 2, 3, 4}, true);
     auto parts = module.Forward({a});
     EXPECT_EQ(parts.size(), 4);
@@ -107,10 +111,12 @@ TEST(AutoDiffTest, SplitVectorCase) {
     EXPECT_EQ(a->grad, Vec<int>({0, 0, 1, 0}));
 }
 
-DEFINE_MODULE_WITH_PARAMS(VectorPow, int)
+namespace auto_diff {
+    DEFINE_MODULE_WITH_PARAMS(VectorPow, int)
+}
 
 TEST(AutoDiffTest, ModuleWithParamsCase) {
-    VectorPow<Vec<int>, VectorBackend<int>> module(2);
+    auto_diff::VectorPow<Vec<int>, VectorBackend<int>> module(2);
     auto a = std::make_shared<VecNode<int>>(Vec<int>{1, 2, 3, 4}, true);
     auto b = module.Forward({a})[0];
     EXPECT_EQ(b->data, Vec<int>({1, 4, 9, 16}));

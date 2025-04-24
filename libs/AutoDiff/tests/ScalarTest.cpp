@@ -3,7 +3,8 @@
 
 #include "Modules.hpp"
 
-using namespace auto_diff;
+using auto_diff::Node;
+using auto_diff::NodePtr;
 
 TEST(AutoDiffTest, NodeCreationCase) {
     auto a = std::make_shared<Node<int>>();
@@ -34,10 +35,12 @@ class BasicBackend {
     }
 };
 
-DEFINE_MODULE(BasicSum)
+namespace auto_diff {
+    DEFINE_MODULE(BasicSum)
+}
 
 TEST(AutoDiffTest, ForwardCaseSum2Numbers) {
-    BasicSum<int, BasicBackend<int>> module;
+    auto_diff::BasicSum<int, BasicBackend<int>> module;
     auto a = std::make_shared<Node<int>>(3);
     auto b = std::make_shared<Node<int>>(4);
     auto c = module.Forward({a, b})[0];
@@ -52,7 +55,7 @@ TEST(AutoDiffTest, ForwardCaseSum2Numbers) {
 }
 
 TEST(AutoDiffTest, BackwarCaseSum2Numbers) {
-    BasicSum<int, BasicBackend<int>> module;
+    auto_diff::BasicSum<int, BasicBackend<int>> module;
     auto a = std::make_shared<Node<int>>(3);
     auto b = std::make_shared<Node<int>>(4);
     auto c = module.Forward({a, b})[0];
@@ -63,7 +66,7 @@ TEST(AutoDiffTest, BackwarCaseSum2Numbers) {
 }
 
 TEST(AutoDiffTest, SumManyInputsCase) {
-    BasicSum<int, BasicBackend<int>> module;
+    auto_diff::BasicSum<int, BasicBackend<int>> module;
     std::vector<NodePtr<int>> inputs;
     const size_t n = 10;
     for (size_t i = 1; i <= n; ++i) {
@@ -79,7 +82,7 @@ TEST(AutoDiffTest, SumManyInputsCase) {
 }
 
 TEST(AutoDiffTest, SequantialCallOfModuleCase) {
-    BasicSum<int, BasicBackend<int>> module;
+    auto_diff::BasicSum<int, BasicBackend<int>> module;
     auto a = std::make_shared<Node<int>>(10);
     auto b = std::make_shared<Node<int>>(100);
     auto c = module.Forward({a, b})[0];
@@ -94,7 +97,7 @@ TEST(AutoDiffTest, SequantialCallOfModuleCase) {
 }
 
 TEST(AutoDiffTest, RequiresGradFalseCase) {
-    BasicSum<int, BasicBackend<int>> module;
+    auto_diff::BasicSum<int, BasicBackend<int>> module;
     auto a = std::make_shared<Node<int>>(10, false);
     auto b = std::make_shared<Node<int>>(100, true);
     auto c = module.Forward({a, a})[0];

@@ -3,45 +3,47 @@
 
 #include "Logger.hpp"
 
-using namespace ai;
+using ai::Logger;
+
+const float pi = 3.14f;
 
 class LoggerTests : public testing::Test {
  protected:
-    void SetUp() override {
-        output.clear();
-        Logger::GetInstance().SetOutputStream(&output);
-    }
+    void SetUp() override { Logger::GetInstance().SetOutputStream(&m_output); }
 
-    void TearDown() override {}
+    void TearDown() override { m_output.clear(); }
 
-    std::ostringstream output;
+    auto GetOutput() -> std::string { return m_output.str(); }
+
+ private:
+    std::ostringstream m_output;
 };
 
 TEST_F(LoggerTests, LogInfoMessage) {
     LOG_INFO("This is an info message");
-    EXPECT_THAT(output.str(), ::testing::HasSubstr("This is an info message"));
-    EXPECT_THAT(output.str(), ::testing::HasSubstr("INFO"));
+    EXPECT_THAT(GetOutput(), ::testing::HasSubstr("This is an info message"));
+    EXPECT_THAT(GetOutput(), ::testing::HasSubstr("INFO"));
 }
 
 TEST_F(LoggerTests, LogWarningMessage) {
     LOG_WARNING("This is a warning message");
-    EXPECT_THAT(output.str(), ::testing::HasSubstr("This is a warning message"));
-    EXPECT_THAT(output.str(), ::testing::HasSubstr("WARNING"));
+    EXPECT_THAT(GetOutput(), ::testing::HasSubstr("This is a warning message"));
+    EXPECT_THAT(GetOutput(), ::testing::HasSubstr("WARNING"));
 }
 
 TEST_F(LoggerTests, LogString) {
     LOG_INFO("Hello, {}!", "world");
-    EXPECT_THAT(output.str(), ::testing::HasSubstr("Hello, world!"));
+    EXPECT_THAT(GetOutput(), ::testing::HasSubstr("Hello, world!"));
 }
 
 TEST_F(LoggerTests, LogNumbers) {
     LOG_INFO("Hello, {},{:5},{:*<5},{:*>5},{:*^6}", 42, 42, 42, 42, 42);
-    EXPECT_THAT(output.str(), ::testing::HasSubstr("Hello, 42,   42,42***,***42,**42**"));
+    EXPECT_THAT(GetOutput(), ::testing::HasSubstr("Hello, 42,   42,42***,***42,**42**"));
 }
 
 TEST_F(LoggerTests, LogFloatingPoints) {
-    LOG_INFO("{:10.5f},{:.3f}", 3.14f, 3.14f);
-    EXPECT_THAT(output.str(), ::testing::HasSubstr("   3.14000,3.140"));
+    LOG_INFO("{:10.5f},{:.3f}", pi, pi);
+    EXPECT_THAT(GetOutput(), ::testing::HasSubstr("   3.14000,3.140"));
 }
 
 TEST_F(LoggerTests, ToManyBracketsIsNotOK) {
@@ -50,5 +52,5 @@ TEST_F(LoggerTests, ToManyBracketsIsNotOK) {
 
 TEST_F(LoggerTests, ToManyArgsIsOK) {
     LOG_INFO("{}", "hello", "world");
-    EXPECT_THAT(output.str(), ::testing::HasSubstr("hello"));
+    EXPECT_THAT(GetOutput(), ::testing::HasSubstr("hello"));
 }

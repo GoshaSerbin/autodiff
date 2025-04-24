@@ -4,7 +4,9 @@ Checks: >
   misc-*, modernize-*, performance-*, portability-*,
   readability-*,
   -misc-include-cleaner,
-  -readability-identifier-length
+  -readability-identifier-length,
+  -readability-uppercase-literal-suffix,
+  -hicpp-uppercase-literal-suffix
 
 WarningsAsErrors: >
   bugprone-*, cert-*, clang-analyzer-*, concurrency-*,
@@ -12,4 +14,8 @@ WarningsAsErrors: >
   misc-*, modernize-*, portability-*,
   readability-*,
   -misc-include-cleaner,
-  -readability-identifier-length
+  -readability-identifier-length,
+  -readability-uppercase-literal-suffix,
+  -hicpp-uppercase-literal-suffix,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -readability-magic-numbers

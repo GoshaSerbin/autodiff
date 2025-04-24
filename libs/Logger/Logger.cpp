@@ -6,11 +6,15 @@
 
 namespace ai {
 
-    /// Returns the current time in string format HH:MM:SS.mmm
-    auto GetCurrentTime() -> std::string {
+    constexpr int MILLISECONDS_PER_SECOND = 1000;
+
+    auto Logger::GetCurrentTime() -> std::string {
         auto now = std::chrono::system_clock::now();
-        auto milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % 1000;
+        auto milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()) % MILLISECONDS_PER_SECOND;
         const std::time_t time = std::chrono::system_clock::to_time_t(now);
+
+        // The GetCurrentTime method is called only inside the Log method, which has mutex lock, therefore it is thread-safe
+        // NOLINTNEXTLINE(concurrency-mt-unsafe)
         const std::tm tm = *std::localtime(&time);
 
         std::ostringstream oss;
@@ -34,8 +38,8 @@ namespace ai {
 
     auto Logger::BuildPrefix(Level level, std::source_location location) -> std::string {
         std::ostringstream oss;
-        oss << "[" << LevelToString(level) << "]\t" << "[" << GetCurrentTime() << "]\t" << "[" << location.file_name() << ", "
-            << location.function_name() << ", " << location.line() << "]\t";
+        oss << "[" << LevelToString(level) << "]\t" << "[" << GetCurrentTime() << "]\t" << "[" << location.function_name() << ", "
+            << location.file_name() << ":" << location.line() << "]\t";
         return oss.str();
     }
 
