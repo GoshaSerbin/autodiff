@@ -142,6 +142,9 @@ Static Private Member Functions</h2></td></tr>
 <tr class="separator:ad80a1523a2f110930e4a19cb0b717ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5260193367cd5d58ae2de6a8a6291439" id="r_a5260193367cd5d58ae2de6a8a6291439"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#a5260193367cd5d58ae2de6a8a6291439">LevelToString</a> (<a class="el" href="classai_1_1Logger.html#a20d63b05636949a3dcd52a3966f8e4c4">Level</a> level) noexcept -&gt; std::string</td></tr>
 <tr class="separator:a5260193367cd5d58ae2de6a8a6291439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a640dd42638194f8c2235e5d5a61be732" id="r_a640dd42638194f8c2235e5d5a61be732"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1Logger.html#a640dd42638194f8c2235e5d5a61be732">GetCurrentTime</a> () -&gt; std::string</td></tr>
+<tr class="memdesc:a640dd42638194f8c2235e5d5a61be732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current time in string format HH:MM:SS.mmm.  <br /></td></tr>
+<tr class="separator:a640dd42638194f8c2235e5d5a61be732"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -157,7 +160,7 @@ Private Attributes</h2></td></tr>
 <p>Based on the singleton pattern, thread safety. The default stream is std::cout. It uses std::vformat for formating. For custom classes logging you need to implement specialization of std::formatter for your class.</p>
 <p>Setting output stream: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> file = std::make_unique&lt;std::ofstream&gt;(<span class="stringliteral">&quot;log.log&quot;</span>);</div>
 <div class="line"><a class="code hl_function" href="classai_1_1Logger.html#afd098d21fd4fed3ae82577aa4fe3de6c">Logger::GetInstance</a>().SetOutputStream(file.get());</div>
-<div class="ttc" id="aclassai_1_1Logger_html_afd098d21fd4fed3ae82577aa4fe3de6c"><div class="ttname"><a href="classai_1_1Logger.html#afd098d21fd4fed3ae82577aa4fe3de6c">ai::Logger::GetInstance</a></div><div class="ttdeci">static auto GetInstance() noexcept -&gt; Logger &amp;</div><div class="ttdef"><b>Definition</b> Logger.cpp:21</div></div>
+<div class="ttc" id="aclassai_1_1Logger_html_afd098d21fd4fed3ae82577aa4fe3de6c"><div class="ttname"><a href="classai_1_1Logger.html#afd098d21fd4fed3ae82577aa4fe3de6c">ai::Logger::GetInstance</a></div><div class="ttdeci">static auto GetInstance() noexcept -&gt; Logger &amp;</div><div class="ttdef"><b>Definition</b> Logger.cpp:25</div></div>
 </div><!-- fragment --><p> Custom class logging: </p><div class="fragment"><div class="line">    <span class="keyword">class </span>MyClass {</div>
 <div class="line">        <span class="keyword">public</span>:</div>
 <div class="line">        <span class="keywordtype">int</span> x = 42;</div>
@@ -173,9 +176,10 @@ Private Attributes</h2></td></tr>
 <div class="line">    ...</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// logging</span></div>
-<div class="line">    <a class="code hl_define" href="Logger_8hpp.html#a378e28bfcb78d17285210d6bbb70a083">LOG_INFO</a>(<span class="stringliteral">&quot;Let me log pi={:10f}, str {}, e={:{}.{}f} and my class {} here!&quot;</span>, pi, <span class="stringliteral">&quot;hi&quot;</span>, e, 3, 2, MyClass{});</div>
+<div class="line">    <a class="code hl_define" href="Logger_8hpp.html#a378e28bfcb78d17285210d6bbb70a083">LOG_INFO</a>(<span class="stringliteral">&quot;Let me log pi={:10f}, str {}, e={:{}.{}f} and my class {} here!&quot;</span>, <a class="code hl_variable" href="Tests_8cpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a>, <span class="stringliteral">&quot;hi&quot;</span>, e, 3, 2, MyClass{});</div>
 <div class="line">    <span class="comment">// [INFO]   [18:06:52.588]  [file.cpp, int main(), 23]  Let me log pi=  3.141593, str hi, e=2.72 and my class [42, 42] here!</span></div>
-<div class="ttc" id="aLogger_8hpp_html_a378e28bfcb78d17285210d6bbb70a083"><div class="ttname"><a href="Logger_8hpp.html#a378e28bfcb78d17285210d6bbb70a083">LOG_INFO</a></div><div class="ttdeci">#define LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> Logger.hpp:127</div></div>
+<div class="ttc" id="aLogger_8hpp_html_a378e28bfcb78d17285210d6bbb70a083"><div class="ttname"><a href="Logger_8hpp.html#a378e28bfcb78d17285210d6bbb70a083">LOG_INFO</a></div><div class="ttdeci">#define LOG_INFO(...)</div><div class="ttdef"><b>Definition</b> Logger.hpp:130</div></div>
+<div class="ttc" id="aTests_8cpp_html_abce8f0db8a5282e441988c8d2e73f79e"><div class="ttname"><a href="Tests_8cpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a></div><div class="ttdeci">const float pi</div><div class="ttdef"><b>Definition</b> Tests.cpp:8</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a20d63b05636949a3dcd52a3966f8e4c4" name="a20d63b05636949a3dcd52a3966f8e4c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a20d63b05636949a3dcd52a3966f8e4c4">&#9670;&#160;</a></span>Level</h2>
@@ -318,6 +322,33 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a640dd42638194f8c2235e5d5a61be732" name="a640dd42638194f8c2235e5d5a61be732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a640dd42638194f8c2235e5d5a61be732">&#9670;&#160;</a></span>GetCurrentTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ai::Logger::GetCurrentTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; std::string</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the current time in string format HH:MM:SS.mmm. </p>
 
 </div>
 </div>
